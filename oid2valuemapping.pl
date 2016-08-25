@@ -13,7 +13,7 @@ my %options;
 GetOptions( \%options, "oid=s", "name=s", "mibs-dir=s", "dir=s", "help" );
 
 if ( defined($options{'help'}) || !defined($options{'oid'})) {
-    die("Usage $0 --oid OID::to_map [--name values_mappings_name] [--mibs-dir /path/to/mibs] [--help] [--dir]\n");
+    die("Usage $0 --oid OID::to_map [--name values_mappings_name] [--mibs-dir /path/to/mibs] [--dir] [--help] \n");
 }
 
 if( defined($options{'dir'}) && ! -d $options{'dir'} ) {
