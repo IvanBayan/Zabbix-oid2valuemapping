@@ -1,6 +1,5 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Project Name}
+# Zabbix-oid2valuemapping
+
 Since Zabbix 3.0 it's possible to import/export value mappings in XML format or
 manage it via API. That script create mappings in XML format which you could
 import in Zabbix, all that you need - specify OID.
@@ -14,9 +13,10 @@ SNMP:
 You need to have properly configured SNMP. First check that snmp 'know' about
 OID in which you are interesting for.
 For example:
+```
 snmpget -v 2c -c public localhost   ifType.1
 IF-MIB::ifType.1 = INTEGER: ethernetCsmacd(6)
-
+```
 Here you see that host return integer value 6 that was mapped to
 'ethernetCsmacd'.
 
@@ -33,9 +33,12 @@ Usage oid2valuemapping.pl --oid OID::to_map [--name values_mappings_name] [--mib
     will specify 'dir' option, script will create file in that directory
     
 Examples:
+```
 oid2valuemapping.pl --oid .1.3.6.1.2.1.11.30
+```
 
 Will print on display next xml:
+```xml
 <?xml version='1.0' standalone='yes'?>
 <zabbix_export>
   <date>2016-08-25T14:50:03Z</date>
@@ -56,12 +59,8 @@ Will print on display next xml:
   </value_maps>
   <version>3.0</version>
 </zabbix_export>
-
-
+```
+```
 oid2valuemapping.pl --oid .1.3.6.1.2.1.11.30 --dir /tmp
+```
 Will write same xml in /tmp/snmpEnableAuthenTraps.xml
-
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
