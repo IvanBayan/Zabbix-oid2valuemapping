@@ -22,15 +22,21 @@ Here you see that host return integer value 6 that was mapped to
 
 You can specify additional MIB directory, but i didn't test it, sorry.
 ## Usage
-Usage oid2valuemapping.pl --oid OID::to_map [--name values_mappings_name] [--mibs-dir /path/to/mibs] [--dir] [--help] 
+```bash
+oid2valuemapping.pl --oid OID::to_map [--name values_mappings_name] [--mibs-dir /path/to/mibs] [--dir] [--help] 
+```
 --oid - is mandatory option, you can specify it by name or in numerical form
     so for example IF-MIB::ifType, ifType or .1.3.6.1.2.1.2.2.1.3 will work in
     same way
+    
 --name - you can choose the name for your mapping, if not specified textual
     convention name or label will be used
+    
 --mibs-dir - you can add additional MIBs dir
+
 --dir - by default script will write XML document right on your screen, if you
     will specify 'dir' option, script will create file in that directory
+
     
 Examples:
 ```
